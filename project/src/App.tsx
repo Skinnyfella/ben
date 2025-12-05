@@ -5,8 +5,8 @@ function App() {
     <div className="min-h-screen bg-black text-white p-4 md:p-6 lg:p-8">
       <div className="max-w-[1400px] mx-auto space-y-4 md:space-y-6">
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 md:gap-6">
-          <div className="space-y-4 md:space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 md:gap-6 items-stretch">
+          <div className="space-y-4 md:space-y-6 flex flex-col">
             <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-10 lg:p-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 md:mb-8">
                 Helping Businesses Grow Through Digital Marketing
@@ -34,7 +34,7 @@ function App() {
             </div>
           </div>
 
-          <div className="space-y-4 md:space-y-6 flex flex-col">
+          <div className="space-y-4 md:space-y-6 flex flex-col h-full">
             <div className="bg-[#1a1a1a] rounded-3xl px-8 py-4 flex items-center justify-between">
               <span className="text-xl md:text-2xl font-light">
                 Benjamin<span className="font-semibold">Graph</span>
