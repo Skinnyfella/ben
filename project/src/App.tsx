@@ -46,7 +46,7 @@ function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-[260px_1fr] gap-4 md:gap-6 h-full">
+            <div className="grid grid-cols-1 sm:grid-cols-[260px_1fr] gap-4 md:gap-6 h-full items-start">
               <div className="bg-[#d4d4e8] rounded-3xl overflow-hidden h-full">
                 <img
                   src="/image.png"
@@ -55,22 +55,27 @@ function App() {
                 />
               </div>
 
-              <div className="bg-[#1a1a1a] rounded-3xl p-6 md:p-8 flex flex-col justify-between h-full">
-                <div>
-                  <div className="mb-6">
-                    <span className="text-gray-400 text-sm md:text-base">Name:</span>
-                    <p className="text-xl md:text-2xl font-light mt-1">Benjamin Shotala</p>
-                  </div>
+              <div className="flex flex-col gap-4 md:gap-6 h-full">
+                <div className="bg-[#1a1a1a] rounded-3xl p-5 md:p-6">
+                  <span className="text-gray-400 text-sm md:text-base">Name:</span>
+                  <p className="text-xl md:text-2xl font-light mt-1">Benjamin Shotala</p>
+                </div>
+
+                <div className="bg-[#1a1a1a] rounded-3xl p-5 md:p-6">
                   <div>
                     <span className="text-gray-400 text-sm md:text-base">Based in:</span>
                     <p className="text-xl md:text-2xl font-light mt-1">Nigeria</p>
                   </div>
+                  <div className="mt-4 bg-white/20 rounded-xl overflow-hidden h-28">
+                    <img src="/map.png" alt="map" className="w-full h-full object-cover" />
+                  </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className="bg-[#1a1a1a] rounded-3xl p-5 md:p-6 mt-auto flex items-center justify-between">
                   <div className="bg-blue-600 rounded-full p-3 inline-flex">
                     <Linkedin className="w-6 h-6" />
                   </div>
+                  <div className="text-sm text-green-400">available</div>
                 </div>
               </div>
             </div>
