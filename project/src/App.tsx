@@ -167,7 +167,7 @@ function App() {
               <button className="text-gray-400 hover:text-white text-lg transition-colors">Resume</button>
             </div>
 
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+            <p className="italic font-extralight text-gray-300/90 leading-relaxed text-base md:text-lg">
               I am a digital marketing expert passionate about creating impactful marketing campaigns that drive results. With a strong understanding of SEO, content marketing, and CRM tools like HubSpot and Salesforce, I collaborate closely with brands to enhance their online presence and achieve measurable growth.
             </p>
           </div>
