@@ -46,16 +46,16 @@ function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-[260px_1fr] gap-4 md:gap-6 flex-1">
-              <div className="bg-[#d4d4e8] rounded-3xl overflow-hidden aspect-[3/4]">
+            <div className="grid grid-cols-1 sm:grid-cols-[260px_1fr] gap-4 md:gap-6 h-full">
+              <div className="bg-[#d4d4e8] rounded-3xl overflow-hidden h-full">
                 <img
                   src="/image.png"
                   alt="Benjamin Shotala"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover block"
                 />
               </div>
 
-              <div className="bg-[#1a1a1a] rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+              <div className="bg-[#1a1a1a] rounded-3xl p-6 md:p-8 flex flex-col justify-between h-full">
                 <div>
                   <div className="mb-6">
                     <span className="text-gray-400 text-sm md:text-base">Name:</span>
