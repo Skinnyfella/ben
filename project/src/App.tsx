@@ -64,7 +64,73 @@ function MapImage() {
   );
 }
 
+function CaseCard({ title, summary, image }: { title: string; summary: string; image?: string }) {
+  const [expanded, setExpanded] = useState(false);
+  // truncate by characters (20 chars) to match the requested behaviour
+  const limitChars = 20;
+  const needsTruncate = summary.length > limitChars;
+  const short = needsTruncate ? summary.slice(0, limitChars) : summary;
+
+  return (
+    <div className="bg-[#0f1724] rounded-2xl p-5">
+      <div className="mb-4 rounded-lg overflow-hidden bg-[#111827] h-36">
+        <img src={image || '/image.png'} alt="thumb" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="text-xl font-semibold mb-2">{title}</div>
+
+      <div className="text-gray-400 text-sm">
+        {expanded ? (
+          <>
+            {summary}{' '}
+            {needsTruncate && (
+              <button
+                onClick={() => setExpanded(false)}
+                className="text-gray-300 ml-1 underline"
+              >
+                show less
+              </button>
+            )}
+          </>
+        ) : (
+          <>
+            {short}
+            {needsTruncate && (
+              <button onClick={() => setExpanded(true)} className="text-gray-300 ml-1">
+                ...
+              </button>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function App() {
+
+  const caseStudies = [
+    {
+      id: 1,
+      title: 'Brand Refresh for ACME',
+      summary:
+        "Revamped ACME's brand identity and boosted engagement by 48%. Short case summary highlighting the outcome.",
+      image: '/cases/case-1.png',
+    },
+    {
+      id: 2,
+      title: 'SEO Growth for BetaCo',
+      summary: 'Implemented SEO strategy leading to 3x organic traffic in 6 months.',
+      image: '/cases/case-2.png',
+    },
+    {
+      id: 3,
+      title: 'Paid Ads Optimization',
+      summary: 'Reduced CPA by 32% while increasing conversion volume for a key campaign.',
+      image: '/cases/case-3.png',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white p-4 md:p-6 lg:p-8">
       <div className="max-w-[1400px] mx-auto space-y-4 md:space-y-6">
@@ -147,27 +213,31 @@ function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-          <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-10">
-            <div className="flex justify-between items-center mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-stretch">
+          <div className="bg-[#1a1a1a] rounded-3xl p-6 md:p-8 h-full">
+            <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl md:text-4xl font-semibold">Case studies</h2>
-              <button className="text-gray-400 hover:text-white text-lg transition-colors">See All</button>
+              <button
+                onClick={() => (window.location.href = '/case-studies')}
+                className="text-gray-400 hover:text-white text-lg transition-colors"
+              >
+                See All
+              </button>
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-[#e5e5e5] rounded-2xl aspect-square"></div>
-              <div className="bg-[#e5e5e5] rounded-2xl aspect-square"></div>
-              <div className="bg-[#e5e5e5] rounded-2xl aspect-square"></div>
+              {caseStudies.map((c) => (
+                <CaseCard key={c.id} title={c.title} summary={c.summary} image={c.image} />
+              ))}
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-10">
+          <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-10 flex flex-col h-full">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-3xl md:text-4xl font-semibold">About me</h2>
               <button className="text-gray-400 hover:text-white text-lg transition-colors">Resume</button>
             </div>
 
-            <p className="italic font-extralight text-gray-300/90 leading-relaxed text-base md:text-lg">
+            <p className="italic font-extralight text-gray-300/90 leading-7 md:leading-8 text-base md:text-lg flex-1">
               I am a digital marketing expert passionate about creating impactful marketing campaigns that drive results. With a strong understanding of SEO, content marketing, and CRM tools like HubSpot and Salesforce, I collaborate closely with brands to enhance their online presence and achieve measurable growth.
             </p>
           </div>
