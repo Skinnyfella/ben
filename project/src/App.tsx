@@ -141,9 +141,14 @@ function App() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 md:mb-8">
                 Helping Businesses Grow Through Digital Marketing
               </h1>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors">
+              <a
+                href="https://calendly.com/shotalabenjamin/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors inline-block text-center"
+              >
                 Hire me
-              </button>
+              </a>
             </div>
 
             <div className="grid grid-cols-3 gap-4 md:gap-6">
@@ -203,10 +208,24 @@ function App() {
                 </div>
 
                 <div className="bg-[#1a1a1a] rounded-3xl p-5 md:p-6 mt-auto flex items-center justify-between">
-                  <div className="bg-blue-600 rounded-full p-3 inline-flex">
+                  <a
+                    href="https://www.linkedin.com/in/benjamin-shotala/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 rounded-full p-3 inline-flex"
+                  >
                     <Linkedin className="w-6 h-6" />
-                  </div>
-                  <div className="text-sm text-green-400">available</div>
+                  </a>
+
+                  <a
+                    href="https://www.upwork.com/freelancers/~010aa7ed478ed49abc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0ea87a] rounded-full p-3 inline-flex"
+                    aria-label="Upwork profile"
+                  >
+                    <img src="/cases/upwork.png" alt="Upwork" className="w-5 h-5 object-contain" />
+                  </a>
                 </div>
               </div>
             </div>
