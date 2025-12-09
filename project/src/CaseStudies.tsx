@@ -1,6 +1,3 @@
-import React from 'react';
-import { Linkedin } from 'lucide-react';
-
 const caseStudies = [
   {
     id: 1,
